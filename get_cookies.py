@@ -11,10 +11,8 @@ def load_cookies(filename):
     with open(filename, 'rb') as f:
         return pickle.load(f)
 
-def get_cookies():
+def get_cookies(base_url="https://codingprojects.ru/"):
     if not os.path.isfile("cookies.txt"):  
-        base_url = "https://codingprojects.ru/"
-
         print("Trying to parse login page...")
 
         req = requests.get(base_url + "login")
